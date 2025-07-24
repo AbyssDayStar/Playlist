@@ -1,0 +1,103 @@
+/* 标题介绍居中 */
+h1,
+#self {
+    text-align: center;
+}
+
+/* 标签细斜体 */
+.type {
+  font-weight: 200;       /* 细体（100-300 为细体范围） */
+  font-style: italic;     /* 斜体 */
+}
+
+/* 歌曲类 */
+.song {
+  position: relative;
+  border: 2px solid #e3f2fd;          /* 初始浅蓝色边框 */
+  border-radius: 12px;
+  padding: 20px;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* 弹性过渡 */
+  cursor: pointer;
+  overflow: hidden;                   /* 确保伪元素不溢出 */
+  z-index: 1;
+  width: 300px;
+  display: inline-block;
+  margin-right: 30px;
+}
+
+/* 悬停时添加发光边框和放大效果 */
+.song:hover {
+  border-color: #1d6fa5;
+  box-shadow: 0 8px 25px rgba(52, 152, 219, 0.3);
+  transform: translateY(-5px) scale(1.02); /* 轻微上浮和放大 */
+}
+
+/* 添加悬浮光效 */
+.song::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(29, 111, 165, 0.1), transparent);
+  transition: 0.6s;
+  z-index: -1;
+}
+
+/* h2 标题聚焦效果 */
+h2 {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 4px; /* 为下划线预留空间 */
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* 去除所有链接的下划线和默认颜色 */
+a {
+  text-decoration: none; /* 去除下划线 */
+  color: inherit;       /* 继承父元素颜色 */
+}
+
+/* 访问过链接的样式 */
+a:visited {
+  color: inherit;       /* 继承父元素颜色，去除紫色 */
+}
+
+/* 创建下划线伪元素 */
+a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0; /* 初始宽度为0 */
+  height: 3px; /* 下划线粗细 */
+  background-color: transparent; /* 初始透明 */
+  transition: width 0.5s ease, background-color 0.3s ease;
+}
+
+/* 聚焦状态下的下划线动画 */
+a:hover::after {
+  width: 100%; /* 扩展到100%宽度 */
+  background-color: #2ecc71; /* 绿色 */
+}
+
+/* 为键盘导航提供视觉反馈 */
+a:hover {
+  outline: none; /* 移除默认轮廓 */
+  color: #27ae60; /* 可选：改变文字颜色 */
+}
+
+/* 歌曲介绍细体 */
+.infor {
+  font-weight: 300;  /* 细体 */
+}
+
+/* 介绍纤斜体 */
+#self {
+  font-weight: 400;       /* 细体（100-300 为细体范围） */
+  font-style: italic;     /* 斜体 */
+}
