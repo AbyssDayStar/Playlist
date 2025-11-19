@@ -40,3 +40,38 @@
     transition: 0.6s;
     z-index: -1;
 }
+
+@font-face {
+    font-family: 'pingfang';
+    src: url('../res/PingFang-W4.ttc') format('truetype');
+}
+
+/*自定义字体-苹方*/
+
+@font-face {
+    font-family: 'zuoye';
+    src: url('../res/CEFFontsCJK-Regular.ttf') format('truetype');
+}
+
+/*自定义字体-快去写作业*/
+
+h1 {
+    text-align: center;
+    font-family: 'pingfang';
+}
+
+/*标题格式*/
+
+#header {
+    text-align: center;
+    font-family: 'pingfang';
+    font-size: 40px;
+}
+
+/*标题格式*/
+
+.text {
+    font-family: 'zuoye';
+}
+
+/*文本类*/
