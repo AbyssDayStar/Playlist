@@ -1,0 +1,6 @@
+[functions]
+  directory = "netlify/functions"
+
+[build]
+  command = "npm install"
+  functions = "netlify/functions"

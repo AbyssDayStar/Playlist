@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>新歌提交与管理</title>
+  <base target="_blank" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .container { max-width: 900px; margin: 20px auto; padding: 0 20px; }
+    form { background: #f5f5f5; padding: 20px; border-radius: 8px; margin-bottom: 30px; }
+    form input, form textarea { width: 100%; padding: 8px; margin: 8px 0; box-sizing: border-box; }
+    form button { background: #2ecc71; color: white; border: none; padding: 10px 20px; cursor: pointer; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+    th { background: #f2f2f2; }
+    .delete-btn { background: #e74c3c; color: white; border: none; padding: 5px 10px; cursor: pointer; }
+  </style>
+  <script src="../js/update.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <h1>新歌提交</h1>
+    <form id="add-form">
+      <label>歌曲名称 *</label>
+      <input type="text" id="name" required />
+
+      <label>B站视频链接 *</label>
+      <input type="url" id="url" required placeholder="https://www.bilibili.com/video/BVxxx" />
+
+      <label>分类 (如：中文 古风 叙事)</label>
+      <input type="text" id="category" />
+
+      <label>简短描述</label>
+      <textarea id="description" rows="2"></textarea>
+
+      <button type="submit">提交</button>
+    </form>
+
+    <h2>管理现有歌曲</h2>
+    <div id="manage-list">加载中...</div>
+  </div>
+</body>
+</html>
