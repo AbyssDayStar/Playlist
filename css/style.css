@@ -12,24 +12,21 @@ h1,
   /* 斜体 */
 }
 
-/* 歌曲类 */
+/* 歌曲卡片 */
 .song {
   position: relative;
   border: 2px solid #e3f2fd;
-  /* 初始浅蓝色边框 */
   border-radius: 12px;
   padding: 20px;
   background: white;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  /* 弹性过渡 */
   cursor: pointer;
   overflow: hidden;
-  /* 确保伪元素不溢出 */
   z-index: 1;
   width: 300px;
-  display: inline-block;
-  margin-right: 30px;
+  /* 移除 inline-block 和 margin-right */
+  display: block;
 }
 
 /* 悬停时添加发光边框和放大效果 */
@@ -121,3 +118,13 @@ a:hover {
   font-style: italic;
   /* 斜体 */
 }
+
+/* 卡片列表容器 */
+.song-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  margin: 20px 0;
+}
+/* 其余样式保持不变 */

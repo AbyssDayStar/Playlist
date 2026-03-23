@@ -1,64 +1,44 @@
-<h1><b>施工中……请不要使用此页面！</b></h1><br />
-<a href="../try/main.html">测试</a>
-<a href="../index.html">返回</a><br />
-<hr />
-<br /> <br />
-
 <!DOCTYPE html>
 <html>
-<!--
-
-    (、、@)
-    
--->
-
 <head>
-    <meta charset="UTF-8"><!--编码-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--自适应-->
-    <title>提交</title><!--标题-->
-    <!--样式-->
-    <link rel="stylesheet" type="text/css" href="../css/update_style.css"><!--预留样式接口-->
+  <meta charset="utf-8" />
+  <title>新歌提交与管理</title>
+  <base target="_blank" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .container { max-width: 900px; margin: 20px auto; padding: 0 20px; }
+    form { background: #f5f5f5; padding: 20px; border-radius: 8px; margin-bottom: 30px; }
+    form input, form textarea { width: 100%; padding: 8px; margin: 8px 0; box-sizing: border-box; }
+    form button { background: #2ecc71; color: white; border: none; padding: 10px 20px; cursor: pointer; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+    th { background: #f2f2f2; }
+    .delete-btn { background: #e74c3c; color: white; border: none; padding: 5px 10px; cursor: pointer; }
+  </style>
+  <script src="../js/update.js" defer></script>
 </head>
-
 <body>
-    <div id="header">音乐提交</div><!--标题-->
-    <dlv style="float: right;"><a href="..\index.html">原页面</a></dlv><br /><!--返回-->
-    <div class="text"><!--div应用text类-->
-        <div id="writeIn">
-            <form name='upto' action="../php/input.php" style="text-align: center;"><!--发送到input.php-->
-                <div class="song">
-                    <h2>提交内容：</h2>
-                </div><br /><!--引子-->
-                <div class="song">
-                    <h3>&emsp;标题</h3><input id="Title" type="text" />
-                </div><br /><!--同介绍-->
-                <div class="song">
-                    <h3>&emsp;链接</h3><input id="link" type="text" />
-                </div><br />
-                <div class="song">
-                    <h3>&emsp;标签</h3><input id="type" type="text" />
-                </div><br />
-                <div class="song">
-                    <h3>&emsp;介绍</h3><textarea id="word" rows="10" cols="30"></textarea>
-                </div><br>
-                <div class="song">
-                    <h3>&emsp;联系方式（邮件）（可选）</h3><input name="mail" type="email" />
-                </div><br /><br />
-            </form>
-            <button onclick="read()">提交</button>
-        </div>
-    </div>
-    <hr />
-    <div style="text-align: center;"><!--版权申明-->
-        2025 By·AbyssDayStar
-        手动更新，更新有滞后
-    </div>
-</body>
+  <div class="container">
+    <h1>新歌提交</h1>
+    <form id="add-form">
+      <label>歌曲名称 *</label>
+      <input type="text" id="name" required />
 
+      <label>B站视频链接 *</label>
+      <input type="url" id="url" required placeholder="https://www.bilibili.com/video/BVxxx" />
+
+      <label>分类 (如：中文 古风 叙事)</label>
+      <input type="text" id="category" />
+
+      <label>简短描述</label>
+      <textarea id="description" rows="2"></textarea>
+
+      <button type="submit">提交</button>
+    </form>
+
+    <h2>管理现有歌曲</h2>
+    <div id="manage-list">加载中...</div>
+  </div>
+</body>
 </html>
-<script>
-    function read() {
-        var Try = document.getElementById("Title").value;
-        console.log(Try);
-    }
-</script>
